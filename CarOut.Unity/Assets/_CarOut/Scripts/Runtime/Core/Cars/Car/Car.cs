@@ -1,4 +1,5 @@
 using CarOut.Cars.Attributes;
+using CarOut.Cars.Controller;
 using CarOut.Cars.MVP;
 using UnityEngine;
 using Zenject;
@@ -28,16 +29,16 @@ namespace CarOut.Cars
 
 		#endregion
 
-		[Inject]
-		private void Construct(ICarController carController, CarVisual carVisual)
+		/*[Inject]
+		private void Construct(CarVisual carVisual)
 		{
-			_controller = carController;
 			_carVisual = carVisual;
-		}
+		}*/
 		
 		private void Awake()
 		{
 			_inputHandler = GetComponent<InputHandler>();
+			_controller = GetComponent<CarControllerWheelBased>();
 		}
 
 		private void Start()

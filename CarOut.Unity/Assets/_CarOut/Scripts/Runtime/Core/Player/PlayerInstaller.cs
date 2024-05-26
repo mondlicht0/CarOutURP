@@ -6,11 +6,14 @@ using Zenject;
 public class PlayerInstaller : MonoInstaller
 {
     [SerializeField] private Car _carPrefab;
-    [SerializeField] private CarVisual _carVisual;
     
     public override void InstallBindings()
     {
-        Container.InstantiatePrefab(_carPrefab);
-        Container.Bind<CarVisual>().FromInstance(_carVisual);
+        GameObject carGameObject = Container.InstantiatePrefab(_carPrefab);
+        Car car = carGameObject.GetComponent<Car>();
+        CarVisual carVisual = carGameObject.GetComponentInChildren<CarVisual>();
+        
+        Container.Bind<Car>().FromInstance(car).AsSingle();
+        Container.Bind<CarVisual>().FromInstance(carVisual).AsSingle();
     }
 }

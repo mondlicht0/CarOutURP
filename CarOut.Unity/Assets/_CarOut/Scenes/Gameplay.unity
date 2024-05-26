@@ -1615,6 +1615,7 @@ MonoBehaviour:
   _scriptableObjectInstallers: []
   _monoInstallers:
   - {fileID: 628150766}
+  - {fileID: 628150769}
   _installerPrefabs: []
   _autoRun: 1
   OnPreInstall:
@@ -1659,8 +1660,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41a5a599b531af54792d808d413e6bb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _carPrefab: {fileID: 0}
-  _carVisual: {fileID: 0}
+  _carPrefab: {fileID: 7335864829396379161, guid: 8cd8598e060581e409fb3d057ce82e18,
+    type: 3}
 --- !u!1001 &629731961
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2479,24 +2480,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2086871835}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1132904027 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2483862381282588786, guid: 8cd8598e060581e409fb3d057ce82e18,
-    type: 3}
-  m_PrefabInstance: {fileID: 1987118125}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1132904029
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1132904027}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c2a55a291926d73418d54f3c3fdbfda1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1209339271
 GameObject:
   m_ObjectHideFlags: 0
@@ -2640,6 +2623,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1326784682}
   - component: {fileID: 1326784681}
+  - component: {fileID: 1326784683}
   m_Layer: 0
   m_Name: Virtual Camera
   m_TagString: Untagged
@@ -2694,7 +2678,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1326784680}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.2315846, y: 0.000000006762409, z: -0.0000000016098352, w: 0.9728148}
+  m_LocalRotation: {x: 0.23158461, y: -0.000000016738623, z: 0.0000000039847334, w: 0.9728148}
   m_LocalPosition: {x: -2.1492958, y: 0.37765074, z: -0.08333588}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2702,6 +2686,18 @@ Transform:
   - {fileID: 142957188}
   m_Father: {fileID: 682010342}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1326784683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1326784680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eaac7255735e55145bcd00a04dc83174, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1357368072
 GameObject:
   m_ObjectHideFlags: 0
@@ -2788,7 +2784,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1357368072}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.2315846, y: 0.000000006762409, z: -0.0000000016098352, w: 0.9728148}
+  m_LocalRotation: {x: 0.23158461, y: -0.000000016738623, z: 0.0000000039847334, w: 0.9728148}
   m_LocalPosition: {x: -2.1492958, y: 0.37765074, z: -0.08333588}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3490,21 +3486,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: CarWithSuspension
       objectReference: {fileID: 0}
-    - target: {fileID: 7335864829396379161, guid: 8cd8598e060581e409fb3d057ce82e18,
+    - target: {fileID: 1686194297473648178, guid: 8cd8598e060581e409fb3d057ce82e18,
         type: 3}
-      propertyPath: _carData
-      value: 
-      objectReference: {fileID: 11400000, guid: 8fdf2bf109fa10e40baa940676807b63,
-        type: 2}
-    m_RemovedComponents:
-    - {fileID: 5018395214798954507, guid: 8cd8598e060581e409fb3d057ce82e18, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2483862381282588786, guid: 8cd8598e060581e409fb3d057ce82e18,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1132904029}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8cd8598e060581e409fb3d057ce82e18, type: 3}
 --- !u!1 &2061252258
 GameObject:
