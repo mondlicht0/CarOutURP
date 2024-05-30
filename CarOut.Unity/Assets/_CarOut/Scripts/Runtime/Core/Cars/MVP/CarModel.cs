@@ -1,17 +1,21 @@
 using CarOut.Cars.Attributes;
+using UnityEngine;
 
 namespace CarOut.Cars.MVP
 {
 	public class CarModel : Model
 	{
-		protected CarConfig CarData;
-		protected ICarController _carController;
+		public CarConfig CarData { get; private set; }
+		public Vector2 MoveDirection { get; private set; }
 		
-		public CarModel(CarVisual view, CarConfig carData, ICarController carController) : base(view)
+		public CarModel(CarConfig carData)
 		{
-			_carController = carController;
-			_view = view;
 			CarData = carData;
+		}
+
+		public void UpdateCarInput(Vector2 newDirection)
+		{
+			MoveDirection = newDirection;
 		}
 	}
 }

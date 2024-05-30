@@ -190,7 +190,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1686194297473648178}
   serializedVersion: 4
-  m_Mass: 100
+  m_Mass: 125
   m_Drag: 0.3
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -682,6 +682,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2a55a291926d73418d54f3c3fdbfda1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _carMesh: {fileID: 6043082571083940589}
 --- !u!1 &5558836767829749401
 GameObject:
   m_ObjectHideFlags: 0

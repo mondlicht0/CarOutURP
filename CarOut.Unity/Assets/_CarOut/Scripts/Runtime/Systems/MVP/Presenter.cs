@@ -1,11 +1,11 @@
 public abstract class Presenter
 {
-	private Model _model;
-	private View _view;
+	protected Model Model;
+	protected View View;
 
-	public Presenter(Model model, View view) 
+	protected Presenter(Model model, View view) 
 	{
-		_model = model;
-		_view = view;
+		Model = model;
+		View = view;
 	}
 }
