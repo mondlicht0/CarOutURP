@@ -1,0 +1,43 @@
+using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
+
+public class CustomPostProcessRenderFeature : ScriptableRendererFeature
+{
+    [SerializeField] private Shader _bloomShader;
+    [SerializeField] private Shader _compositeShader;
+
+    private Material _bloomMaterial;
+    private Material _compositeMaterial;
+    
+    private CustomPostProcessPass _customPass;
+    
+    public override void Create()
+    {
+        _customPass = new CustomPostProcessPass(_bloomMaterial, _compositeMaterial);
+    }
+
+    public override void AddRenderPasses(ScriptableRenderer renderer, ref RenderingData renderingData)
+    {
+        _bloomMaterial = CoreUtils.CreateEngineMaterial(_bloomShader);
+        _compositeMaterial = CoreUtils.CreateEngineMaterial(_compositeShader);
+        
+        renderer.EnqueuePass(_customPass);
+    }
+
+    public override void SetupRenderPasses(ScriptableRenderer renderer, in RenderingData renderingData)
+    {
+        if (renderingData.cameraData.cameraType == CameraType.Game)
+        {
+            _customPass.ConfigureInput(ScriptableRenderPassInput.Depth);
+            _customPass.ConfigureInput(ScriptableRenderPassInput.Color);
+            _customPass.SetTarget(renderer.cameraColorTargetHandle, renderer.cameraDepthTargetHandle);
+        }
+    }
+
+    protected override void Dispose(bool disposing)
+    {
+        CoreUtils.Destroy(_bloomMaterial);
+        CoreUtils.Destroy(_compositeMaterial);
+    }
+}
