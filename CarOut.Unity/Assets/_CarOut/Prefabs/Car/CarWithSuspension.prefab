@@ -166,7 +166,7 @@ MonoBehaviour:
   - {fileID: 6132430188273279701}
   _layerMask:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 4294967295
   _wheelsTrail:
   - {fileID: 1312693697685890946}
   - {fileID: 7396358037275620761}
