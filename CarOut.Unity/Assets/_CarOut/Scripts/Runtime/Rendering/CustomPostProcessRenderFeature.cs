@@ -14,14 +14,13 @@ public class CustomPostProcessRenderFeature : ScriptableRendererFeature
     
     public override void Create()
     {
+        _bloomMaterial = CoreUtils.CreateEngineMaterial(_bloomShader);
+        _compositeMaterial = CoreUtils.CreateEngineMaterial(_compositeShader);
         _customPass = new CustomPostProcessPass(_bloomMaterial, _compositeMaterial);
     }
 
     public override void AddRenderPasses(ScriptableRenderer renderer, ref RenderingData renderingData)
     {
-        _bloomMaterial = CoreUtils.CreateEngineMaterial(_bloomShader);
-        _compositeMaterial = CoreUtils.CreateEngineMaterial(_compositeShader);
-        
         renderer.EnqueuePass(_customPass);
     }
 
@@ -31,6 +30,7 @@ public class CustomPostProcessRenderFeature : ScriptableRendererFeature
         {
             _customPass.ConfigureInput(ScriptableRenderPassInput.Depth);
             _customPass.ConfigureInput(ScriptableRenderPassInput.Color);
+            Debug.Log(renderer.cameraColorTargetHandle == null);
             _customPass.SetTarget(renderer.cameraColorTargetHandle, renderer.cameraDepthTargetHandle);
         }
     }

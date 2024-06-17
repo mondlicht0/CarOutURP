@@ -26,8 +26,8 @@ public class CustomPostProcessPass : ScriptableRenderPass
     {
         _bloomMaterial = bloomMaterial;
         _compositeMaterial = compositeMaterial;
+        
         renderPassEvent = RenderPassEvent.BeforeRenderingPostProcessing;
-        _descriptor = new RenderTextureDescriptor();
 
         _bloomMipUp = new int[MaxPyramideSize];
         _bloomMipDown = new int[MaxPyramideSize];
@@ -47,7 +47,6 @@ public class CustomPostProcessPass : ScriptableRenderPass
         {
             _hdrFormat = GraphicsFormat.B10G11R11_UFloatPack32;
         }
-
         else
         {
             _hdrFormat = QualitySettings.activeColorSpace == ColorSpace.Linear
@@ -79,7 +78,7 @@ public class CustomPostProcessPass : ScriptableRenderPass
         for (int i = 0; i < mipCount; i++)
         {
             RenderingUtils.ReAllocateIfNeeded(ref _rtBloomMipUp[i], desc, FilterMode.Bilinear, TextureWrapMode.Clamp, name: _rtBloomMipUp[i].name);
-            RenderingUtils.ReAllocateIfNeeded(ref _rtBloomMipDown[i], desc, FilterMode.Bilinear, TextureWrapMode.Clamp, name: _rtBloomMipUp[i].name);
+            RenderingUtils.ReAllocateIfNeeded(ref _rtBloomMipDown[i], desc, FilterMode.Bilinear, TextureWrapMode.Clamp, name: _rtBloomMipDown[i].name);
             desc.width = Mathf.Max(1, desc.width >> 1);
             desc.height = Mathf.Max(1, desc.height >> 1);
         }
@@ -87,7 +86,7 @@ public class CustomPostProcessPass : ScriptableRenderPass
         Blitter.BlitCameraTexture(cmd, source, _rtBloomMipDown[0], RenderBufferLoadAction.DontCare, RenderBufferStoreAction.Store, _bloomMaterial, 0);
 
         var lastDown = _rtBloomMipDown[0];
-        for (int i = 0; i < mipCount; i++)
+        for (int i = 1; i < mipCount; i++)
         {
             Blitter.BlitCameraTexture(cmd, lastDown, _rtBloomMipUp[i], RenderBufferLoadAction.DontCare, RenderBufferStoreAction.Store, _bloomMaterial, 1);
             Blitter.BlitCameraTexture(cmd, _rtBloomMipUp[i], _rtBloomMipDown[i], RenderBufferLoadAction.DontCare, RenderBufferStoreAction.Store, _bloomMaterial, 2);

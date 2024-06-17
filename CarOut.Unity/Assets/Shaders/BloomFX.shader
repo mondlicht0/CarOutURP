@@ -1,4 +1,4 @@
-Shader "Hidden/Universal Render Pipeline/BloomFX"
+Shader "BloomFX"
 {
     HLSLINCLUDE
         #pragma exclude_renderers gles

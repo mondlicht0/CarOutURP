@@ -68,6 +68,9 @@
         },
         {
             "m_Id": "7bf1c7df84e44c71b31b45047d67392c"
+        },
+        {
+            "m_Id": "c513007bd421404d9cbaa3dbb161e500"
         }
     ],
     "m_GroupDatas": [],
@@ -258,15 +261,15 @@
     ],
     "m_VertexContext": {
         "m_Position": {
-            "x": 996.0000610351563,
-            "y": -23.00002670288086
+            "x": 1552.9998779296875,
+            "y": 18.000036239624025
         },
         "m_Blocks": []
     },
     "m_FragmentContext": {
         "m_Position": {
-            "x": 996.0000610351563,
-            "y": 178.00001525878907
+            "x": 1552.9998779296875,
+            "y": 219.00006103515626
         },
         "m_Blocks": [
             {
@@ -464,10 +467,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -16.99997901916504,
-            "y": 208.99998474121095,
-            "width": 152.99998474121095,
-            "height": 34.00001525878906
+            "x": 394.9999694824219,
+            "y": 267.0,
+            "width": 142.99996948242188,
+            "height": 34.000030517578128
         }
     },
     "m_Slots": [
@@ -683,10 +686,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -528.0,
-            "y": 274.0000305175781,
+            "x": -524.0000610351563,
+            "y": 285.0,
             "width": 208.00003051757813,
-            "height": 435.0000305175781
+            "height": 435.0
         }
     },
     "m_Slots": [
@@ -758,10 +761,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -598.0,
-            "y": -110.0,
-            "width": 108.0,
-            "height": 34.0
+            "x": 21.999902725219728,
+            "y": -76.0,
+            "width": 98.00000762939453,
+            "height": 34.000003814697269
         }
     },
     "m_Slots": [
@@ -948,9 +951,9 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": 230.0000457763672,
-            "y": 208.99998474121095,
-            "width": 207.99998474121095,
+            "x": 642.0,
+            "y": 267.0,
+            "width": 207.9998779296875,
             "height": 302.0
         }
     },
@@ -1097,6 +1100,31 @@
     "m_CustomColors": {
         "m_SerializableColors": []
     }
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.Vector4MaterialSlot",
+    "m_ObjectId": "58c876d8180542b3ab5842d0122200b1",
+    "m_Id": 0,
+    "m_DisplayName": "Out",
+    "m_SlotType": 1,
+    "m_Hidden": false,
+    "m_ShaderOutputName": "Out",
+    "m_StageCapability": 3,
+    "m_Value": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+    },
+    "m_DefaultValue": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+    },
+    "m_Labels": []
 }
 
 {
@@ -1265,7 +1293,7 @@
     "m_ShaderOutputName": "Offset",
     "m_StageCapability": 3,
     "m_Value": {
-        "x": 0.0,
+        "x": 1.0,
         "y": 0.0
     },
     "m_DefaultValue": {
@@ -1302,10 +1330,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": 588.0,
-            "y": -76.0000228881836,
-            "width": 208.00006103515626,
-            "height": 302.0
+            "x": 955.9998779296875,
+            "y": -18.999967575073243,
+            "width": 208.000244140625,
+            "height": 301.9999694824219
         }
     },
     "m_Slots": [
@@ -1533,11 +1561,11 @@
     "m_Guid": {
         "m_GuidSerialized": "95d637a9-c36a-4e2c-967b-850d1fed8ed0"
     },
-    "m_Name": "BloomTexutre",
+    "m_Name": "BloomTexture",
     "m_DefaultRefNameVersion": 1,
-    "m_RefNameGeneratedByDisplayName": "BloomTexutre",
-    "m_DefaultReferenceName": "_BloomTexutre",
-    "m_OverrideReferenceName": "_Bloom_Texutre",
+    "m_RefNameGeneratedByDisplayName": "BloomTexture",
+    "m_DefaultReferenceName": "_BloomTexture",
+    "m_OverrideReferenceName": "_Bloom_Texture",
     "m_GeneratePropertyBlock": false,
     "m_UseCustomSlotLabel": false,
     "m_CustomSlotLabel": "",
@@ -1630,7 +1658,7 @@
     "m_Type": "UnityEditor.ShaderGraph.Texture2DMaterialSlot",
     "m_ObjectId": "bdfc5c7558274374af8b2c27067268c0",
     "m_Id": 0,
-    "m_DisplayName": "BloomTexutre",
+    "m_DisplayName": "BloomTexture",
     "m_SlotType": 1,
     "m_Hidden": false,
     "m_ShaderOutputName": "Out",
@@ -1661,6 +1689,50 @@
         "w": 0.0
     },
     "m_Labels": []
+}
+
+{
+    "m_SGVersion": 1,
+    "m_Type": "UnityEditor.ShaderGraph.ColorNode",
+    "m_ObjectId": "c513007bd421404d9cbaa3dbb161e500",
+    "m_Group": {
+        "m_Id": ""
+    },
+    "m_Name": "Color",
+    "m_DrawState": {
+        "m_Expanded": true,
+        "m_Position": {
+            "serializedVersion": "2",
+            "x": -799.0,
+            "y": -218.0,
+            "width": 208.0,
+            "height": 127.00000762939453
+        }
+    },
+    "m_Slots": [
+        {
+            "m_Id": "58c876d8180542b3ab5842d0122200b1"
+        }
+    ],
+    "synonyms": [
+        "rgba"
+    ],
+    "m_Precision": 0,
+    "m_PreviewExpanded": true,
+    "m_DismissedVersion": 0,
+    "m_PreviewMode": 0,
+    "m_CustomColors": {
+        "m_SerializableColors": []
+    },
+    "m_Color": {
+        "color": {
+            "r": 1.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 1.0
+        },
+        "mode": 0
+    }
 }
 
 {
@@ -1736,10 +1808,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": 229.99996948242188,
-            "y": -174.0,
-            "width": 208.00003051757813,
-            "height": 312.9999694824219
+            "x": 642.0,
+            "y": -115.99998474121094,
+            "width": 207.9998779296875,
+            "height": 313.0
         }
     },
     "m_Slots": [
@@ -1792,10 +1864,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -120.34747314453125,
-            "y": 359.7200012207031,
-            "width": 0.0,
-            "height": 0.0
+            "x": 291.9999084472656,
+            "y": 418.0,
+            "width": 208.00003051757813,
+            "height": 301.99993896484377
         }
     },
     "m_Slots": [
@@ -1933,7 +2005,7 @@
     "m_RefNameGeneratedByDisplayName": "BloomIntensity",
     "m_DefaultReferenceName": "_BloomIntensity",
     "m_OverrideReferenceName": "",
-    "m_GeneratePropertyBlock": true,
+    "m_GeneratePropertyBlock": false,
     "m_UseCustomSlotLabel": false,
     "m_CustomSlotLabel": "",
     "m_DismissedVersion": 0,
@@ -1961,10 +2033,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -465.0,
-            "y": -76.0,
-            "width": 145.0,
-            "height": 136.0
+            "x": 146.9998779296875,
+            "y": -18.000009536743165,
+            "width": 145.00003051757813,
+            "height": 136.00003051757813
         }
     },
     "m_Slots": [
@@ -1990,6 +2062,6 @@
     "m_CustomColors": {
         "m_SerializableColors": []
     },
-    "m_ComparisonType": 0
+    "m_ComparisonType": 3
 }
 
